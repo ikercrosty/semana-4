@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulario</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+
+  <!-- Topbar -->
+  <header class="topbar container-fluid py-3">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      <div class="brand d-flex align-items-center gap-3">
+        <div class="logo-glass">
+          <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" alt="logo" width="44" height="44">
+        </div>
+        <div>
+          <h1 class="site-title">Formulario</h1>
+          <p class="site-sub">5to Bachillerato — Computación</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button id="themeToggle2" class="btn btn-sm btn-outline-light" title="Cambiar tema">
+          <i class="fa-regular fa-moon"></i>
+        </button>
+        <a class="btn btn-sm btn-primary" href="Menú.html"><i class="fa-solid fa-house me-2"></i>Volver al Menú</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="container main-grid my-4">
+    <aside class="sidebar glass">
+      <div class="menu-top text-center mb-3">
+        <img src="https://images.unsplash.com/photo-1526378720199-3b8f6f1b1f6b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="avatar" class="avatar">
+        <h4 class="mt-2">Estudiante</h4>
+        <small class="text-muted">Computación</small>
+      </div>
+
+      <nav class="nav flex-column">
+        <a class="nav-link" href="Menú.html"><i class="fa-solid fa-house me-2"></i>Inicio</a>
+        <a class="nav-link" href="https://developer.mozilla.org/es/" target="_blank" rel="noopener"><i class="fa-brands fa-md fa-firefox-browser me-2"></i>Enlace MDN</a>
+        <a class="nav-link active" href="Formulario.html"><i class="fa-solid fa-pen-to-square me-2"></i>Formulario</a>
+      </nav>
+
+      <div class="sidebar-footer mt-auto text-center">
+        <small class="muted">Formulario interactivo</small>
+      </div>
+    </aside>
+
+    <main class="content glass p-4">
+      <h2 class="mb-3">Formulario de registro</h2>
+
+      <section class="enunciado mb-3">
+        <h4>Instrucciones</h4>
+        <p>Complete los campos obligatorios. Use el botón Registrar para guardar. Puede descargar sus datos como JSON.</p>
+      </section>
+
+      <section class="enunciado mb-4">
+        <h4>Imagen relacionada</h4>
+        <div class="text-center mt-2">
+          <img src="https://images.unsplash.com/photo-1581093588401-8f3b9b2b6b2b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="computacion" class="hero-img">
+        </div>
+      </section>
+
+      <section class="form-card">
+        <form id="registroForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre completo *</label>
+              <input id="nombre" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+              <div class="invalid-feedback">Ingrese su nombre completo.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="telefono" class="form-label">No. de teléfono *</label>
+              <input id="telefono" name="telefono" class="form-control" placeholder="50212345678" inputmode="numeric" required>
+              <div class="form-text">Solo números, 7 a 15 dígitos.</div>
+              <div class="invalid-feedback">Ingrese un teléfono válido.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="direccion" class="form-label">Dirección</label>
+              <input id="direccion" name="direccion" class="form-control" placeholder="Ciudad, calle, zona">
+            </div>
+
+            <div class="col-md-6">
+              <label for="correo" class="form-label">Correo electrónico *</label>
+              <input id="correo" name="correo" type="email" class="form-control" placeholder="ejemplo@correo.com" required>
+              <div class="invalid-feedback">Ingrese un correo válido.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="area" class="form-label">Área de interés *</label>
+              <select id="area" name="area" class="form-select" required>
+                <option value="">-- Seleccione --</option>
+                <option value="desarrollo">Desarrollo Web</option>
+                <option value="redes">Redes y Telecomunicaciones</option>
+                <option value="seguridad">Seguridad Informática</option>
+                <option value="bd">Bases de Datos</option>
+              </select>
+              <div class="invalid-feedback">Seleccione un área.</div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input id="terminos" class="form-check-input" type="checkbox" required>
+                <label for="terminos" class="form-check-label">Confirmo que los datos son verídicos y acepto los términos *</label>
+                <div class="invalid-feedback">Debe aceptar los términos.</div>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex gap-2 align-items-center">
+              <button id="submitBtn" type="submit" class="btn btn-success btn-lg"><i class="fa-solid fa-check me-2"></i>Registrar</button>
+              <button id="downloadBtn" type="button" class="btn btn-outline-light"><i class="fa-solid fa-download me-2"></i>Descargar JSON</button>
+              <button id="clearBtn" type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash me-2"></i>Limpiar</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- UI extras: progreso y preview -->
+        <div class="mt-4">
+          <label class="form-label">Progreso</label>
+          <div class="progress mb-3"><div id="formProgress" class="progress-bar" style="width:0%"></div></div>
+
+          <div id="previewCard" class="preview">
+            <strong>Vista previa</strong>
+            <div id="previewContent" class="mt-2"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid py-3">
+    <div class="container text-center small muted">
+      <strong>Nombre y apellido:</strong> Tu Nombre Apellido — <strong>Grado:</strong> 5to Bachillerato — <strong>Carrera:</strong> Computación
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toastRoot" class="toast-root"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>
