@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menú</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+
+  <!-- Topbar -->
+  <header class="topbar container-fluid py-3">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      <div class="brand d-flex align-items-center gap-3">
+        <div class="logo-glass">
+          <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" alt="logo" width="44" height="44">
+        </div>
+        <div>
+          <h1 class="site-title">Menú</h1>
+          <p class="site-sub">5to Bachillerato — Computación</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button id="themeToggle" class="btn btn-sm btn-outline-light" title="Cambiar tema">
+          <i class="fa-regular fa-moon"></i>
+        </button>
+        <a class="btn btn-sm btn-primary" href="Formulario.html"><i class="fa-solid fa-file-lines me-2"></i>Ir al Formulario</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout: sidebar + contenido -->
+  <div class="container main-grid my-4">
+    <!-- Sidebar (menú idéntico en ambas páginas) -->
+    <aside class="sidebar glass">
+      <div class="menu-top text-center mb-3">
+        <div id="avatarEmoji" class="avatar-emoji" role="img" aria-label="Avatar aleatorio">🙂</div>
+
+        <h4 class="mt-2">Estudiante</h4>
+        <small class="text-muted">Computación</small>
+      </div>
+
+      <nav class="nav flex-column">
+        <a class="nav-link active" href="Menú.html"><i class="fa-solid fa-house me-2"></i>Inicio</a>
+        <a class="nav-link" href="https://developer.mozilla.org/es/" target="_blank" rel="noopener"><i class="fa-brands fa-md fa-firefox-browser me-2"></i>Enlace MDN</a>
+        <a class="nav-link" href="Formulario.html"><i class="fa-solid fa-pen-to-square me-2"></i>Formulario</a>
+      </nav>
+
+      <div class="sidebar-footer mt-auto text-center">
+        <small class="muted">Menú creado para la tarea</small>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="content glass p-4">
+      <!-- Hero -->
+      <section class="hero d-flex gap-4 align-items-center">
+        <div class="hero-text">
+          <h2 class="display-6">Bienvenido a tu proyecto de Computación</h2>
+          <p class="lead">Diseño moderno, interacción y formulario para prácticas de 5to Bachillerato.</p>
+          <div class="mt-3">
+            <a href="Formulario.html" class="btn btn-primary me-2"><i class="fa-solid fa-arrow-right-to-bracket me-2"></i>Ir al Formulario</a>
+            <button id="demoToastBtn" class="btn btn-outline-light"><i class="fa-solid fa-bolt me-2"></i>Mostrar demo</button>
+          </div>
+        </div>
+
+        <div class="hero-media text-center">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="computacion" class="hero-img">
+        </div>
+      </section>
+
+      <hr class="my-4">
+
+      <!-- Enunciados separados con espacio -->
+      <section class="enunciado">
+        <h3>Enunciado 1</h3>
+        <p>Dos páginas con menús idénticos que dirigen entre sí. Menú con imagen, Inicio, Enlace relacionado y Formulario.</p>
+      </section>
+
+      <section class="enunciado">
+        <h3>Enunciado 2</h3>
+        <p>Página de presentación con imagen relacionada a la carrera y breve descripción.</p>
+      </section>
+
+      <section class="enunciado">
+        <h3>Enunciado 3</h3>
+        <p>La segunda página contiene el formulario con campos: Nombre, Dirección, Teléfono, Correo, selección, checklist y botón de registro.</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid py-3">
+    <div class="container text-center small muted">
+      <strong>Nombre y apellido:</strong> Iker Garía — <strong>Grado:</strong> 5to Bachillerato — <strong>Carrera:</strong> Computación
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toastRoot" class="toast-root"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>
